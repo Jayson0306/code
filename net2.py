@@ -3,7 +3,7 @@ import torch.nn as tn
 import torch.nn.functional as tnf
 import numpy as np
 from torch.autograd import Variable
-from pac.activation import my_actFunc
+from activation import my_actFunc
 
 
 class Pure_DenseNet(tn.Module):
