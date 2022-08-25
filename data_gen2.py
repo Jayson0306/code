@@ -37,6 +37,7 @@ def dt(z):
 
 
 def rand_it(batch_size, variable_dim, region_a, region_b):
+    #随机生成树
     # np.random.rand( )可以返回一个或一组服从“0~1”均匀分布的随机样本值。随机样本取值范围是[0,1)，不包括1。
     # np.random.rand(3,2 )可以返回一个或一组服从“0~1”均匀分布的随机矩阵(3行2列)。随机样本取值范围是[0,1)，不包括1。
     x_it = (region_b - region_a) * np.random.rand(batch_size, variable_dim) + region_a
@@ -58,6 +59,7 @@ class DataGen2:
         self.p = p
 
     def gen_inter(self, batch_size):
+        #generate interior points using loops
         x_input = rand_it(batch_size, 1, self.zs, self.ze)  # 取的内部点的为随机生成
         t_input = rand_it(batch_size, 1, self.ts, self.te)
         label = np.zeros((batch_size, 1))
@@ -80,6 +82,7 @@ class DataGen2:
         return inputs_rand, label_rand
 
     def gen_inter_m(self, batch_size):
+        #generate interior points using matrix method
         x_input = rand_it(batch_size, 1, self.zs, self.ze)  # 取的内部点的为随机生成
         t_input = rand_it(batch_size, 1, self.ts, self.te)
         label = np.zeros((batch_size, 1))
