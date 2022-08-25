@@ -1,4 +1,4 @@
-from net2 import *
+from pac.net2 import *
 from data_gen2 import DataGen2
 from graphing import plot_heatmap
 from data_loss import *
@@ -6,6 +6,7 @@ import numpy as np
 from datetime import datetime
 import matplotlib.pyplot as plt
 
+#2022.0825.2344 更新
 if __name__ == "__main__":
     starttime = datetime.now()
     # 输出数据的初始化
@@ -108,3 +109,5 @@ if __name__ == "__main__":
     plt.plot(log_3, color='g')
     plt.legend(('interior_net loss', 'bd_net loss', 'init_net loss', 'total loss'))
     plt.savefig("D:\\photosaved\\loss_comprt_iterations%d_networksizeSmall.png" % max_it)
+
+
